@@ -1,0 +1,43 @@
+#! /bin/bash
+
+### Gobytego distrobox helper 1.0 ####
+## Made by Adam of Gobytego to help ##
+## people get the most out of their ##
+## steamdecks by allowing them to   ##
+## install and setup easily a       ##
+## ubuntu 22.04 system to be able   ##
+## to install and run apps that are ##
+## not currently available on the   ##
+## steamdeck. Enjoy!!               ##
+######################################
+
+# Download and install distrobox 
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --prefix ~/.local
+curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/extras/install-podman | sh -s -- --prefix ~/.local
+
+# Adding the lines you'll need to .bashrc
+cp ~/.bashrc ~/.bashrc_bak
+echo ' ' >> ~/.bashrc
+echo '## adding four lines for distrobox' >> ~/.bashrc
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+echo 'export PATH=$HOME/.local/podman/bin:$PATH' >> ~/.bashrc
+echo 'xhost +si:localuser:$USER' >> ~/.bashrc
+echo 'alias enterubuntu='distrobox enter ubuntu-22.04' ' >> ~/.bashrc
+echo 'alias stopubuntu='distrobox stop ubuntu-22.04' ' >> ~/.bashrc
+echo ' ' >> ~/.bashrc
+
+# Download and install Ubuntu 22.04
+distrobox create -i ubuntu:22.04
+
+# Commands you need
+echo 'To enter ubuntu type:'
+echo 'distrobox enter ubuntu-22.04 or enterubuntu'
+echo 'To stop ubuntu type:' 
+echo 'distrobox stop ubuntu-22.04 or stopubuntu'
+echo ' '
+echo 'Enjoy! and dont forget to visit gobytego.com'
+
+## if you ever need to delete the ubuntu container type:
+## distrobox rm ubuntu-22.04
+
+## also there is a backup of your .bashrc file called .bashrc_bak if you want to revert the changes
