@@ -40,6 +40,9 @@ echo 'distrobox stop ubuntu-22-04 or stopubuntu'
 echo ' '
 echo 'Enjoy! and dont forget to visit gobytego.com'
 
+# Add Ubuntu 22.04 to your applications menu
+distrobox-generate-entry ubuntu-22-04
+
 ## if you ever need to delete the ubuntu container type:
 ## distrobox rm ubuntu-22-04
 
