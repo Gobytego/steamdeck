@@ -10,3 +10,5 @@ a few of my scripts to make steamdeck more fun
 "howold" will show you how long ago the OS was installed
 
 "upd" kind of useless with steamdeck but it updates your flatpaks wich should automatically be done anyway, guess its a fun way to do it from the terminal.
+
+_***soon to come***_ "gbgcommand" wich is a GUI utility to run all above and future scripts and other commands.
