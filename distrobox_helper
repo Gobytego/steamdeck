@@ -22,8 +22,11 @@ echo '## adding four lines for distrobox' >> ~/.bashrc
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 echo 'export PATH=$HOME/.local/podman/bin:$PATH' >> ~/.bashrc
 echo 'xhost +si:localuser:$USER' >> ~/.bashrc
-echo 'alias enterubuntu='distrobox enter ubuntu-22.04' ' >> ~/.bashrc
-echo 'alias stopubuntu='distrobox stop ubuntu-22.04' ' >> ~/.bashrc
+echo "alias enterubuntu='distrobox enter ubuntu-22-04' " >> ~/.bashrc
+echo "alias stopubuntu='distrobox stop ubuntu-22-04' " >> ~/.bashrc
+echo ' ' >> ~/.bashrc
+echo '# Adding your home bin to $PATH' >> ~/.bashrc
+echo 'export PATH=$PATH:~/bin' >> ~/.bashrc
 echo ' ' >> ~/.bashrc
 
 # Download and install Ubuntu 22.04
@@ -31,13 +34,13 @@ distrobox create -i ubuntu:22.04
 
 # Commands you need
 echo 'To enter ubuntu type:'
-echo 'distrobox enter ubuntu-22.04 or enterubuntu'
+echo 'distrobox enter ubuntu-22-04 or enterubuntu'
 echo 'To stop ubuntu type:' 
-echo 'distrobox stop ubuntu-22.04 or stopubuntu'
+echo 'distrobox stop ubuntu-22-04 or stopubuntu'
 echo ' '
 echo 'Enjoy! and dont forget to visit gobytego.com'
 
 ## if you ever need to delete the ubuntu container type:
-## distrobox rm ubuntu-22.04
+## distrobox rm ubuntu-22-04
 
 ## also there is a backup of your .bashrc file called .bashrc_bak if you want to revert the changes
