@@ -81,7 +81,7 @@ else
 fi
 
 # Run rsync command:
-
+## need to add a exclude for steamgames or at least an option to not backup the games dir.
 echo "Backing up /home to BU_Drive/BU_Backups/$host/..."
 sudo rsync -aH --delete --info=progress2 /home \
 /run/media/$user/BU_Drive/BU_Backups/$host/
@@ -98,6 +98,7 @@ if [ "$?" == "0" ]; then
     echo "------------------"
 
     # Remove old and create new timestamp file:
+    ## need to change this to add a list of installed flatpaks.
     rm -f /run/media/$user/BU_Drive/BU_Backups/$host/BU\ Backup* >/dev/null 2>&1
     touch /run/media/$user/BU_Drive/BU_Backups/$host/"BU Backup was successful: $(date)"
 
